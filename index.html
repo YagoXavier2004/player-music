@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Music Player - Desafio</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <div class="player-container">
+        <header class="main-header">
+            <div class="logo-area">
+                <img src="iconis/logo-ytmusic.svg" alt="Logo do YouTube Music" class="logo">
+                <h1 class="logo-text">Music</h1>
+            </div>
+            <div class="header-status">
+                <span class="badge-online">ONLINE</span>
+                <span class="badge-premium">CONTA PREMIUM</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="video-player-container">
+                <img src="img/capa-player.svg" alt="Clipe Midnight Drive" class="video-background">
+                <div class="badge-absolute top-left">1080p HD</div>
+                <div class="badge-absolute top-right">MÚSICA • VÍDEO</div>
+                <div class="control-absolute bottom-left">02:15 / 03:40</div>
+                <button type="button" class="btn-absolute bottom-right">
+                    <span class="material-symbols-outlined">CURTIR</span>
+                </button>
+            </section>
+
+            <section class="current-track-info">
+                <h2>MIDNIGHT DRIVE (CLIPE OFICIAL)</h2>
+                <p class="track-meta">Retro Cyberwave • Álbum: Neon Horizon • 1.4M visualizações</p>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill"></div>
+                </div>
+            </section>
+
+            <section class="playlist-section">
+                <h3>A SEGUIR • FILA DE REPRODUÇÃO</h3>
+                <p class="playlist-instruction">Role a tela para baixo para navegar pela fila e testar o cabeçalho sticky e o miniplayer fixo.</p>
+                <div class="track-list">
+                    <article class="track-item">
+                        <span class="track-number">01</span>
+                        <div class="track-details">
+                            <strong>Neon Lights Horizon</strong>
+                            <span class="track-artist">Retro Cyberwave • 03:52</span>
+                        </div>
+                        <button type="button" class="btn-play">TOCAR</button>
+                    </article>
+                </div>
+            </section>
+        </main>
+        <aside class="miniplayer-fixed">
+            <div class="miniplayer-header">
+                <span>MINIPLAYER YT</span>
+                <button type="button" class="btn-close-mini">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="miniplayer-body">
+                <img src="capa-player.svg" alt="Miniatura" class="miniplayer-thumb">
+                <div class="miniplayer-details">
+                    <strong>Midnight Drive</strong>
+                    <span class="miniplayer-artist">Retro Cyberwave</span>
+                </div>
+                <button type="button" class="btn-pause-mini">
+                    <span class="material-symbols-outlined">pause_circle</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
