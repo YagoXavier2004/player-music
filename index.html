@@ -3,74 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Music Player - Desafio</title>
+    <title>YouTube Music - Player Expandido</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
-    <div class="player-container">
-        <header class="main-header">
-            <div class="logo-area">
-                <img src="iconis/logo-ytmusic.svg" alt="Logo do YouTube Music" class="logo">
-                <h1 class="logo-text">Music</h1>
+
+    <header class="top-header">
+        <div class="brand-logo">
+           <img src="iconis/logo-ytmusic.svg">
+            <span>Music</span>
+        </div>
+        <div class="premium-tag">Online • Conta Premium</div>
+    </header>
+
+    <section class="player-container">
+        
+        <div class="video-screen">
+            <div class="video-badge-left">
+                <span class="material-symbols-outlined">hd</span>
+                <span>1080p HD</span>
             </div>
-            <div class="header-status">
-                <span class="badge-online">ONLINE</span>
-                <span class="badge-premium">CONTA PREMIUM</span>
+            <div class="video-badge-right">
+                <span class="material-symbols-outlined">music_note_2</span>
+                <span>MÚSICA • VÍDEO</span>
             </div>
-        </header>
 
-        <main class="main-content">
-            <section class="video-player-container">
-                <img src="img/capa-player.svg" alt="Clipe Midnight Drive" class="video-background">
-                <div class="badge-absolute top-left">1080p HD</div>
-                <div class="badge-absolute top-right">MÚSICA • VÍDEO</div>
-                <div class="control-absolute bottom-left">02:15 / 03:40</div>
-                <button type="button" class="btn-absolute bottom-right">
-                    <span class="material-symbols-outlined">CURTIR</span>
-                </button>
-            </section>
-
-            <section class="current-track-info">
-                <h2>MIDNIGHT DRIVE (CLIPE OFICIAL)</h2>
-                <p class="track-meta">Retro Cyberwave • Álbum: Neon Horizon • 1.4M visualizações</p>
-                <div class="progress-bar-container">
-                    <div class="progress-bar-fill"></div>
-                </div>
-            </section>
-
-            <section class="playlist-section">
-                <h3>A SEGUIR • FILA DE REPRODUÇÃO</h3>
-                <p class="playlist-instruction">Role a tela para baixo para navegar pela fila e testar o cabeçalho sticky e o miniplayer fixo.</p>
-                <div class="track-list">
-                    <article class="track-item">
-                        <span class="track-number">01</span>
-                        <div class="track-details">
-                            <strong>Neon Lights Horizon</strong>
-                            <span class="track-artist">Retro Cyberwave • 03:52</span>
-                        </div>
-                        <button type="button" class="btn-play">TOCAR</button>
-                    </article>
-                </div>
-            </section>
-        </main>
-        <aside class="miniplayer-fixed">
-            <div class="miniplayer-header">
-                <span>MINIPLAYER YT</span>
-                <button type="button" class="btn-close-mini">
-                    <span class="material-symbols-outlined">close</span>
+            <div class="video-timeline-info">
+                <span class="time-digital">02:15 / 03:48</span>
+                <button class="btn-like-video">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span>CURTIDO</span>
                 </button>
             </div>
-            <div class="miniplayer-body">
-                <img src="capa-player.svg" alt="Miniatura" class="miniplayer-thumb">
-                <div class="miniplayer-details">
-                    <strong>Midnight Drive</strong>
-                    <span class="miniplayer-artist">Retro Cyberwave</span>
-                </div>
-                <button type="button" class="btn-pause-mini">
-                    <span class="material-symbols-outlined">pause_circle</span>
-                </button>
+        </div>
+
+        <div class="track-main-details">
+            <h1 class="track-main-title">MIDNIGHT DRIVE (CLIPE OFICIAL)</h1>
+            <p class="track-main-sub">Retrô Cyberwave • Álbum: Neon Horizon • 1.4M visualizações</p>
+        </div>
+
+        <div class="main-progress-wrapper">
+            <div class="main-progress-bar">
+                <div class="main-progress-current"></div>
             </div>
-        </aside>
-    </div>
+        </div>
+
+        <div class="main-audio-controls">
+            <span class="material-symbols-outlined">shuffle</span>
+           <span class="material-symbols-outlined">arrow_back_ios</span>
+            <span class="material-symbols-outlined">pause</span>
+            <span class="material-symbols-outlined">arrow_forward_ios</span>
+            <span class="material-symbols-outlined">refresh</span>
+        </div>
+
+       
+        <div class="miniplayer-card">
+            <div class="miniplayer-content">
+                <div class="miniplayer-thumb"></div>
+                <div class="miniplayer-info">
+                    <span class="miniplayer-tag">Miniplayer ativo</span>
+                    <span class="miniplayer-title">Midnight Drive</span>
+                    <span class="miniplayer-artist">Retrô Cyberwave</span>
+                </div>
+            </div>
+            <span class="material-icons-outlined miniplayer-close">close</span>
+        </div>
+
+    </section>
+
+    <section class="queue-container">
+        <h2 class="queue-header-title">A Seguir • Fila de Reprodução</h2>
+        <p class="queue-subtitle">Role a tela para baixo para navegar pela fila e testar o cabeçalho sticky e o miniplayer fixo.</p>
+
+        <div class="queue-list">
+            <div class="queue-item">
+                <div class="queue-item-left">
+                    <span class="queue-index">01</span>
+                    <div class="queue-meta">
+                        <span class="queue-track-name">Neon Lights Horizon</span>
+                        <span class="queue-track-sub">Retrô Cyberwave • 03:52</span>
+                    </div>
+                </div>
+                <button class="btn-play-row">Tocar</button>
+            </div>
+
+            <div class="queue-item">
+                <div class="queue-item-left">
+                    <span class="queue-index">02</span>
+                    <div class="queue-meta">
+                        <span class="queue-track-name">Synthwave Nights</span>
+                        <span class="queue-track-sub">Sunset Dreamers • 04:10</span>
+                    </div>
+                </div>
+                <button class="btn-play-row">Tocar</button>
+            </div>
+
+            <div class="queue-item">
+                <div class="queue-item-left">
+                    <span class="queue-index">03</span>
+                    <div class="queue-meta">
+                        <span class="queue-track-name">Midnight Highway Cruise</span>
+                        <span class="queue-track-sub">Voltage Pulse • 03:25</span>
+                    </div>
+                </div>
+                <button class="btn-play-row">Tocar</button>
+            </div>
+
+            <div class="queue-item">
+                <div class="queue-item-left">
+                    <span class="queue-index">04</span>
+                    <div class="queue-meta">
+                        <span class="queue-track-name">Cyber City Rain</span>
+                        <span class="queue-track-sub">Lo-Fi Neon • 02:45</span>
+                    </div>
+                </div>
+                <button class="btn-play-row">Tocar</button>
+            </div>
+
+            <div class="queue-item">
+                <div class="queue-item-left">
+                    <span class="queue-index">05</span>
+                    <div class="queue-meta">
+                        <span class="queue-track-name">After Hours Drive</span>
+                        <span class="queue-track-sub">The Velocity Squad • 04:30</span>
+                    </div>
+                </div>
+                <button class="btn-play-row">Tocar</button>
+            </div>
+        </div>
+    </section>
+
 </body>
 </html>

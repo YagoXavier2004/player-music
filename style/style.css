@@ -1,48 +1,394 @@
-* { 
-  padding: 0; 
-  margin: 0; 
-  box-sizing: border-box; 
-  font-family: "Arial", "Helvetica", "sans-serif"; 
-} 
-
-body { 
-  background-color: #030303; 
-  color: #fff; 
-  line-height: 1.6; 
-} 
-
-.main-header { 
-  top: 0px; 
-  position: sticky; 
-  position: relative;
-  height: 70px;  
-} 
-
-.logo-area { 
-  width: 50px; 
-  position: absolute; 
-  top: 10px; 
-  left: 2%; 
-} 
-
-.logo-text { 
-  font-size: 1.5rem; 
-  font-weight: bold; 
-  color: #fff; 
-  position: absolute; 
-  top: 50%;          
-  transform: translateY(-50%); 
-  left: calc(2% + 60px);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
-.header-status { 
-  position: absolute; 
-  top: 50%; 
-  right: 2%; 
-  transform: translateY(-50%); 
-  background-color: #292828; 
-  padding: 5px 5px;
-  border-radius: 20px;
+body {
+    background-color: #030303;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    align-content: start;
+    min-height: 100vh;
+    padding: 2vw;
+    overflow-y: auto;
+}
+
+.top-header {
+    width: 100%;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 10px 0 30px 0;
+    position: sticky; 
+    top: 0; 
+    z-index: 100;
+    background-color: #030303;
+}
+
+.brand-logo {
+    
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 6px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.brand-logo img {
+  width: 24px; 
+  height: 24px; 
+  object-fit: contain;
 }
 
 
+.premium-tag {
+    font-size: 11px;
+    color: #f1f1f1;
+    background-color: #504e4e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    padding: 8px;
+    display: inline-block;
+}
+
+.player-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #0b0b0b;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.video-screen {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(180deg, #200b2c 0%, #05010e 100%);
+    border-radius: 8px;
+    position: relative;
+    display: grid;
+    align-content: end;
+    overflow: hidden;
+    border: 1px solid #222;
+}
+
+.video-screen::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(180deg, #ff007f, #ffaa00);
+    border-radius: 50%;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 40px rgba(255, 0, 127, 0.5);
+}
+
+.video-screen::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 4px, #00ffff 6px, #00ffff 8px);
+    opacity: 0.3;
+    transform: perspective(100px) rotateX(60deg);
+    transform-origin: bottom;
+}
+
+.video-badge-left {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #ccc;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 4px;
+}
+
+.video-badge-right {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 6px;
+}
+
+.video-timeline-info {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    z-index: 2;
+}
+
+.time-digital {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.btn-like-video {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ff3b30;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.track-main-details {
+    margin-top: 20px;
+}
+
+.track-main-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
+}
+
+.track-main-sub {
+    font-size: 13px;
+    color: #aaaaaa;
+}
+
+.main-progress-wrapper {
+    margin: 20px 0;
+    width: 100%;
+}
+
+.main-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333333;
+    border-radius: 2px;
+    position: relative;
+}
+
+.main-progress-current {
+    width: 55%;
+    height: 100%;
+    background-color: #ff0000;
+    border-radius: 2px;
+}
+
+.main-audio-controls {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 10px;
+}
+
+.btn-media {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+
+.btn-media:hover {
+    color: #cccccc;
+}
+
+.btn-media-play {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.miniplayer-card {
+    position: absolute;
+    right: 24px;
+    bottom: 85px;
+    width: 260px;
+    background-color: #161616;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.miniplayer-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.miniplayer-thumb {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #ff0055, #7000ff);
+}
+
+.miniplayer-info {
+    display: block;
+    overflow: hidden;
+}
+
+.miniplayer-tag {
+    font-size: 9px;
+    color: #ff334b;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 1px;
+    display: block;
+}
+
+.miniplayer-title {
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.miniplayer-artist {
+    font-size: 11px;
+    color: #888888;
+    display: block;
+}
+
+.miniplayer-close {
+    font-size: 16px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.queue-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #0b0b0b;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.queue-header-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.queue-subtitle {
+    font-size: 12px;
+    color: #777777;
+    margin-bottom: 20px;
+}
+
+.queue-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+}
+
+.queue-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 10px 8px;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.queue-item:hover {
+    background-color: #141414;
+}
+
+.queue-item-left {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+.queue-index {
+    font-size: 12px;
+    color: #555555;
+    width: 16px;
+    text-align: center;
+}
+
+.queue-meta {
+    display: block;
+}
+
+.queue-track-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.queue-track-sub {
+    font-size: 12px;
+    color: #aaaaaa;
+    display: block;
+}
+
+.btn-play-row {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    padding: 6px 12px;
+    transition: color 0.2s;
+}
+
+.btn-play-row:hover {
+    color: #ff0000;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+}
